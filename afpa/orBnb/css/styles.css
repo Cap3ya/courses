@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'poppins';
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #E6DEDE;
+}
+
+body {
+    font-family: poppins;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    &>* {
+        padding: 1em;
+    }
+
+    & h1 {
+        font-size: 1.3em;
+    }
+
+    & h2 {
+        font-size: 1.3em;
+        margin-bottom: 1em;
+    }
+
+    & p, footer a {
+        font-size: .9em;
+
+    }
+
+    & ul {
+        list-style: none;
+    }
+
+    & a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+header {
+
+    & #banner {
+        /*flex-row*/
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & nav {
+            & ul {
+                /*flex-row*/
+                gap: 2em;
+
+                & li {
+
+                    border: 2px solid transparent;
+                    padding-top: 1.5em;
+
+                    &:hover {
+                        border-top-color: blue;
+
+                        & a {
+                            color: blue;
+                        }
+                    }
+                    &:hover {
+                        font-weight: bolder;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+main {
+    & div.flex-row.container {
+        /*flex-row*/
+        align-items: center;
+        margin-bottom: 1em;
+
+        &>* {
+            padding: 10px;
+            border: none;
+        }
+
+        &:nth-child(1) {
+            width: min-content;
+            border: 1px solid #E6DEDE;
+            border-radius: 10px;
+            overflow: hidden;
+
+            & input {
+                font-family: inherit;
+
+                &[type='text'] {
+                    max-width: 33vw;
+                }
+
+                &[type='submit'] {
+                    background-color: #0361FD;
+                    color: white;
+                    &:before {
+                        content: "";
+                        display: block;
+                        background: url("../") no-repeat;
+                        width: 20px;
+                        height: 20px;
+                        float: left;
+                        margin: 0 6px 0 0;
+                    }
+                }
+            }
+
+        }
+
+        & i {
+            background-color: var(--bg-color);
+            height: 20px;
+        }
+    }
+
+    & #gallery {
+        /*flex-row*/
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        & .card {
+            flex: 1;
+            max-height: 100%;
+            border-radius: 20px;
+
+            gap: 1em;
+            display: flex;
+            flex-direction: column;
+
+            & img {
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                object-position: center;
+                object-fit: cover;
+                min-width: 250px;
+                max-width: 100%;
+                height: 100%;
+            }
+
+            &:has( > img) {
+                box-shadow: 0px 5px 20px 0px rgba(138, 138, 138, 1);
+            }
+
+            & p {
+                font-weight: 600;
+                padding: 10px;
+            }
+        }
+
+    }
+
+
+}
+
+footer {
+    /*flex-row*/
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    flex-wrap: wrap;
+    row-gap: 2em;
+
+    &>div {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
+
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-solid.fa-info {
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    #banner {
+        flex-direction: column;
+        align-items: center;
+
+        & nav {
+            width: 100%;
+            margin-bottom: 1em;
+
+            & ul {
+                gap: 0 !important;
+
+                & li {
+                    width: 100%;
+
+                    &:hover {
+                        border-top-color: transparent !important;
+                        border-bottom: 2px solid blue;
+                    }
+
+                    & a {
+                        display: block;
+                        text-align: center;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        &>div.container:nth-child(1) {
+            width: 100% !important;
+
+            .full-text {
+                display: none;
+            }
+
+            .short-text {
+                background-color: #0361FD !important;
+            }
+
+            & i {
+                width: 15%;
+                text-align: center;
+            }
+
+            & #location {
+                flex: 1;
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    i.short-text.fa-solid.fa-magnifying-glass {
+        display: none;
+    }
+}
