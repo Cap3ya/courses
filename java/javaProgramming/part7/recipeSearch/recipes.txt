@@ -5,6 +5,7 @@ egg
 flour
 salt
 butter
+sugar
 
 Meatballs
 20
