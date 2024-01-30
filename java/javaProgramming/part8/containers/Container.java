@@ -1,42 +1,36 @@
 public class Container {
 
-    private int amount1;
-    private int amount2;
-    private int minAmount;
-    private int maxAmount;
+    private int quantity;
+    private int maxQuantity;
 
     public Container() {
-        this.amount1 = 0;
-        this.amount2 = 0; 
-        this.minAmount = 0;
-        this.maxAmount = 100;
+        this.quantity = 0;
+        this.maxQuantity = 100;
     }
 
-    public boolean add(int addAmount) {
-        if (this.amount1 + addAmount > this.maxAmount)
-            return false;
+    public int add(int amount) {
+        int maxAmount = this.maxQuantity - this.quantity;
+        if (amount > maxAmount)
+            amount = maxAmount;
 
-        this.amount1 += addAmount;
-        return true;
+        this.quantity += amount;
+        return amount;
     }
 
-    public boolean remove(int remAmount) {
-        if (this.amount2 - remAmount < this.minAmount)
-            return false;
+    public int remove(int amount) {
+        int maxAmount = this.quantity;
+        if (amount > maxAmount)
+            amount = maxAmount;
 
-        this.amount2 -= remAmount;
-        return true;
-    }
-
-    public void move(int movAmount) {
-        if (this.remove(movAmount) && this.add(movAmount)) {
-            this.remove(movAmount);
-            this.add(movAmount);
-        }
+        this.quantity -= amount;
+        return amount;
     }
 
     public String toString() {
-        return "C1: " + this.amount1 + "/" + this.maxAmount +
-        "\n" + "C2: " + this.amount2 + "/" + this.maxAmount;
+        return this.quantity + "/" + this.maxQuantity;
+    }
+
+    static void move(Container C1, Container C2, int amount) {
+        C2.add(C1.remove(amount));
     }
 }
