@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronomètre</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Chronomètre :</h1>
+    <br />
+    <fieldset>
+        <legend>Mon chrono</legend>
+        <input type="button" id="btnStart" value="Start" />
+        <input type="button" id="btnPause" value="Pause" hidden/>
+        <input type="button" id="btnStop" value="Stop" hidden/>
+        <p id="chrono">
+            <span id="h">00</span>:<span id="m">00</span>:<span id="s">00</span>
+        </p>
+    </fieldset>
+    <br />
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
