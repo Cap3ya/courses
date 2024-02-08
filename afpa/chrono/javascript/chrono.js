@@ -1,13 +1,13 @@
 const chrono = {
     intervalID: 0,
-    prevTps: 0,
-    currTps: 0,
+    prevSec: 0,
+    currSec: 0,
 
     start(callback) {
         let startTime = new Date();
         chrono.intervalID = setInterval(() => {
-            let seconds = Math.round((new Date().getTime() - startTime.getTime()) / 1000 + chrono.prevTps);
-            chrono.currTps = seconds;
+            let seconds = Math.round((new Date().getTime() - startTime.getTime()) / 1000 + chrono.prevSec);
+            chrono.currSec = seconds;
             let hours = parseInt(seconds / 3600);
             seconds = seconds % 3600;
             let minutes = parseInt(seconds / 60);
@@ -18,12 +18,12 @@ const chrono = {
 
     pause() {
         clearInterval(chrono.intervalID);
-        chrono.prevTps = chrono.currTps;
+        chrono.prevSec = chrono.currSec;
     },
 
     stop() {
         clearInterval(chrono.intervalID);
-        chrono.prevTps = 0;
+        chrono.prevSec = 0;
     }
 }
 
