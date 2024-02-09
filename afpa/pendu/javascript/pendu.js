@@ -18,9 +18,12 @@ const pendu = {
     },
 
     setGuess() {
-        const initialGuess = [];
-        for (let i = 0; i < this.secret.length; i++) {
-            initialGuess.push("_")
+        const specialChars = [" ", "-"];
+        const initialGuess = [...this.secret];
+        for (let i = 0; i < initialGuess.length; i++) {
+            if (!specialChars.includes(initialGuess[i])) {
+                initialGuess[i] = "_";
+            }
         }
         this.guess = initialGuess;
     },

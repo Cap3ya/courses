@@ -59,7 +59,8 @@ function guess(target) {
         outcome();
     }
     else if (pendu.getRemainingErrors() == 0) {
-        dom.info.textContent = "Tu as Perdu!"
+        dom.info.textContent = "Tu as Perdu!";
+        dom.secret.textContent = pendu.secret;
         outcome();
     }
 }

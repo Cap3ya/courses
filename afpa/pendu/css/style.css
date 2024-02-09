@@ -1,0 +1,106 @@
+@font-face {
+    font-family: lobsterTwo;
+    src: url('../fonts/LobsterTwo-Regular.ttf');
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: lobsterTwo;
+    font-size: larger;
+    
+    align-items: center;
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 100%;
+
+    & main {
+        flex: 1;
+        align-items: center;
+
+        & #imgContainer {
+            flex: 1;
+            height: 100%;
+
+            & img {
+                max-height: 100%;
+                width: auto;
+            }
+        }
+
+        & #secret {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        & #buttons {
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 650px;
+            height: 85px;
+
+            & #btnStart {
+                height: 40px;
+                width: 80px;
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+
+            & .btnsLetter {
+                flex-basis: 40px;
+                height: 40px;
+
+                color: white;
+                background-color: black;
+                border: 2px solid black;
+                border-radius: 50%;
+
+                &:disabled {
+                    background-color: white;
+                    font-weight: 600;
+                    color: black;
+                }
+            }
+
+        }
+
+        &>* {
+            padding: 1em;
+        }
+
+    }
+
+    &>* {
+        padding: 1em;
+    }
+}
+
+.flex {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+}
+
+button {
+    border-radius: 2px solid black;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 20px;
+
+    background-color: black;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
