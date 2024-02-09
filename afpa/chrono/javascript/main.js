@@ -1,5 +1,5 @@
-import dom from "./javascript/dom.js";
-import chrono from "./javascript/chrono.js";
+import dom from "./dom.js";
+import chrono from "./chrono.js";
 
 dom.btnStart.addEventListener('click', () => {
 
