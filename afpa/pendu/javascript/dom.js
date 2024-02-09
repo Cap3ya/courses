@@ -8,16 +8,16 @@ const dom = {
     image: document.getElementById('image'),
     info: document.getElementById('info'),
 
-    setBtnLetters() {
-        const root = this.buttons;
-        const letters = getAlphabet();
+    setBtnsLetter() {
+        const alphabet = getAlphabet();
+        const root = this.buttons; 
 
-        letters.forEach(letter => {
+        alphabet.forEach(letter => {
             const button = document.createElement('button');
             button.classList.add("btnsLetter");
             button.textContent = letter;
             root.appendChild(button);
-
+            // getElementsByClassName
             this.btnsLetter.push(button);
         })
     },

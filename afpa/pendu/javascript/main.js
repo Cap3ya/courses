@@ -3,7 +3,6 @@ import pendu from './pendu.js';
 import dictionary from './dictionary.js';
 
 dom.buttons.addEventListener("click", (e) => {
-
     if (e.target.id === "btnStart")
         start();
 
@@ -15,52 +14,50 @@ dom.buttons.addEventListener("click", (e) => {
 
 function start() {
 
-    // Create btnsLetter if not defined yet
+    // Create btnsLetter if not yet defined
     if (dom.btnsLetter.length === 0)
-        dom.setBtnLetters()
+        dom.setBtnsLetter()
     // Else display and enable them
     else
         dom.btnsLetter.forEach(btn => {
             btn.hidden = false;
             btn.disabled = false;
         })
-    // Show button start
+    // Hide start button
     dom.btnStart.hidden = true;
-    // Show correct 9pts image 
+    // Show initial 9pts image 
     dom.image.src = '../images/9.png'
     // Indique le nbr de tentatives restantes
     dom.info.textContent = 'Il te reste 9 tentatives'
 
-    // Get a word to be guessed from the dictionary and reset game; 
-    pendu.setSecret(dictionary.getWord());
-    // Initialize current guessed word and display it
-    pendu.setGuess(); 
-    dom.secret.textContent = pendu.getGuess();
+    // Set word to be guessed from the dictionary 
+    pendu.setWord(dictionary.getWord());
+    dom.secret.textContent = pendu.getSecret();
     // Reset number of errors
     pendu.errors = 0;
 
-    console.log(pendu.secret)
+    console.log(pendu.word)
 }
 
 function guess(target) {
 
-    // Update guessed word with letter
-    pendu.checkGuess(target.textContent)
+    // Update secret or inc errors
+    pendu.handleGuess(target.textContent)
 
     // DOM
     target.disabled = true;
-    dom.secret.textContent = pendu.guess.join(" ");
+    dom.secret.textContent = pendu.getSecret();
     dom.info.textContent = "Il te reste " + pendu.getRemainingErrors() + " " + (pendu.getRemainingErrors() > 1 ? "tentatives" : "tentative");
     dom.image.src = `../images/${pendu.getRemainingErrors()}.png`
 
-    if (pendu.secret === pendu.guess.join("")) {
+    if (pendu.word === pendu.getSecret()) {
         dom.image.src = "../images/10.png";
         dom.info.textContent = "Tu as Gagné!"
         outcome();
     }
     else if (pendu.getRemainingErrors() == 0) {
         dom.info.textContent = "Tu as Perdu!";
-        dom.secret.textContent = pendu.secret.split("").join(" ");
+        dom.secret.textContent = pendu.word;
         outcome();
     }
 }
