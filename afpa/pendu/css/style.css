@@ -3,6 +3,11 @@
     src: url('../fonts/LobsterTwo-Regular.ttf');
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background-color: black;
 }
@@ -20,30 +25,35 @@ body {
 
     & main {
         flex: 1;
-        align-items: center;
+        width: 100%;
+        align-items: center;      
 
         & #imgContainer {
             flex: 1;
-            height: 100%;
+            width: 100%;
+            justify-content: center;
 
             & img {
-                max-height: 100%;
-                width: auto;
+                flex-shrink: 1;
+                flex-basis: 300px;
+                object-fit: contain;
+                height: auto;
             }
         }
 
         & #secret {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 600;
         }
 
         & #buttons {
             gap: 5px;
+            width: 100%;
+            max-width: 650px;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            max-width: 650px;
-            height: 85px;
+            min-height: 85px;
 
             & #btnStart {
                 height: 40px;
@@ -73,13 +83,13 @@ body {
         }
 
         &>* {
-            padding: 1em;
+            padding: 1em 0;
         }
 
     }
 
     &>* {
-        padding: 1em;
+        padding: 1em 0;
     }
 }
 
