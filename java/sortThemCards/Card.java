@@ -10,8 +10,11 @@ public class Card {
 
     @Override
     public String toString() {
-        value = (value == 11) ? "Jack" : (value == 12) ? "Queen" : (value == 13) ? "King" : (value == 14) ? "As" : value;
-        return suit + " " + value;
+        return suit + " " + (this.value == 11 ? "J" 
+            : this.value == 12 ? "Q" 
+            : this.value == 13 ? "K" 
+            : this.value == 14 ? "A" 
+            : String.valueOf(this.value));
     }
 
     public Suit getSuit() {
