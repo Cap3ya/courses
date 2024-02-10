@@ -8,7 +8,7 @@ const pendu = {
 
     setWord(word) {
         this.word = word;
-        this.nWord = this.word.normalize("NFD").replace(/\p{Diacritic}/gu, "");
+        this.nWord = word.normalize("NFD").replace(/\p{Diacritic}/gu, "");
         this.setSecret();
     },
 
