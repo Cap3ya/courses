@@ -1,6 +1,6 @@
 const pendu = {
     errors: 0,
-    maxErrors: 9,
+    MAX_ERRORS: 9,
 
     word: "",
     nWord: "",
@@ -40,7 +40,7 @@ const pendu = {
     },
 
     getRemainingErrors() {
-        return this.maxErrors - this.errors;
+        return this.MAX_ERRORS - this.errors;
     },
 
     incErrors() {
