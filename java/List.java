@@ -26,20 +26,56 @@ public class List<T> {
     }
 
     public boolean contains(T value) {
-        for (int i = 0; i < values.length; i++) {
-            if (this.values[i] != null && this.values[i].equals(value))
-                return true;
+        return indexOfValue(value) >= 0;
+    }
+
+    public void remove(T value) {
+        int indexOfValue = indexOfValue(value);
+        if (indexOfValue < 0) {
+            return;
         }
 
-        return false;
+        moveToTheLeft(indexOfValue);
+        this.firstFreeIndex--;
+    }
+
+    public int indexOfValue(T value) {
+        for (int i = 0; i < this.firstFreeIndex; i++) {
+            if (this.values[i].equals(value)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private void moveToTheLeft(int fromIndex) {
+        for (int i = fromIndex; i < this.firstFreeIndex; i++) {
+            this.values[i] = this.values[i + 1];
+        }
+    }
+
+    public T value(int index) {
+        if (index < 0 || index >= this.firstFreeIndex) {
+            throw new ArrayIndexOutOfBoundsException("Index " + index + " outside of [0, " + this.firstFreeIndex + "]");
+        }
+
+        return this.values[index];
+    }
+
+    public int size() {
+        return this.firstFreeIndex; 
     }
 
     public static void main(String[] args) {
-        List<String> strings = new List<>();
-
-        System.out.println(strings.contains("hello"));
-        strings.add("hello");
-        System.out.println(strings.contains("hello"));
-
+        List<String> myList = new List<>();
+        System.out.println(myList.contains("hello"));
+        myList.add("hello");
+        System.out.println(myList.contains("hello"));
+        int index = myList.indexOfValue("hello");
+        System.out.println(index);
+        System.out.println(myList.value(index));
+        myList.remove("hello");
+        System.out.println(myList.contains("hello"));
     }
 }
