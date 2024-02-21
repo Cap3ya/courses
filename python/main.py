@@ -48,7 +48,17 @@ answer = random.randint(0, 100)
 #     d += int(digit, 16) * (16 ** power)
 # print(d)
 
-for index, letter in enumerate(["a","b","c","d"]):
-    print(f"letter {letter} at index {index}")
+# for index, letter in enumerate(["a","b","c","d"]):
+#     print(f"letter {letter} at index {index}")
 
+# name: str = input("What is your name ? ")
+# triangle: str = ""
+# for letter in name:
+#     triangle += letter
+#     print(triangle)
 
+word: str = input("Enter a word: ")
+if word[0] in 'aeiou':
+    print(f'{word}way')
+else:
+    print(f'{word[1:]+word[0]}ay')
