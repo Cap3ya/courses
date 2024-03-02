@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Bienvenue</h1>
+        <div id="user_entries"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    user.forEach(entry => {
+        const [key, value] = entry;
+        const p = document.createElement("p");
+        p.innerText = `${key}: ${value}`
+        user_entries.append(p)
+    })
+</script>

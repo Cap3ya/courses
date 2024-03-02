@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 async function listFiles() {
     const files = await fs.readdir('.');
     for (const file of files) {
-        console.log(files);
+        console.log(file);
     }
 }
 

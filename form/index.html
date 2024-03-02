@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div class="card">
+		<form action="pages/bienvenue.html">
+			<h1>Inscription</h1>
+			<div class="fields">
+				<label for="nom">Nom</label>
+				<p id="errorMsg_nom" class="errorMsg" hidden>Saisissez votre nom</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<input id="nom" type="text" placeholder="Votre nom">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="prenom">Prénom</label>
+				<p class="errorMsg" id="errorMsg_prenom" hidden>Saisissez votre prénom</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<input id="prenom" type="text" placeholder="Votre prénom">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="dateDeNaissance">Date de naissance</label>
+				<p class="errorMsg" id="errorMsg_dateNaissance" hidden>Saisissez votre date de naissance <br> au format
+					dd-mm-yyyy
+				</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<input id="dateDeNaissance" type="text" placeholder="Votre date de naissance">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="lieuDeNaissance">Lieu de naissance</label>
+				<p class="errorMsg" id="errorMsg_lieuNaissance" hidden>Saisissez votre lieu de naissance</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<input id="lieuDeNaissance" type="text" placeholder="Votre lieu de naissance">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="signeAstrologique">Signe astrologique</label>
+				<p class="errorMsg" id="errorMsg_signeAstrologique" hidden>Saisissez votre signe astrologique</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<select id="signeAstrologique">
+						<option value="" disabled selected>Votre signe astrologique</option>
+						<option value="belier">Bélier</option>
+						<option value="taureau">Taureau</option>
+						<option value="gemeaux">Gémeaux</option>
+						<option value="cancer">Cancer</option>
+						<option value="lion">Lion</option>
+						<option value="vierge">Vierge</option>
+						<option value="balance">Balance</option>
+						<option value="scorpion">Scorpion</option>
+						<option value="sagittaire">Sagittaire</option>
+						<option value="capricorne">Capricorne</option>
+						<option value="verseau">Verseau</option>
+						<option value="poisson">Poisson</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="email">Email</label>
+				<p class="errorMsg" id="errorMsg_email" hidden>Saisissez votre email</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+					</svg>
+					<input id="email" type="text" placeholder="Votre email">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="motDePasse">Mot de passe</label>
+				<p class="errorMsg" id="errorMsg_motDePasse" hidden>Saisissez un mot de passe valide</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+					</svg>
+					<input id="motDePasse" type="password" placeholder="Votre mot de passe">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="confMotDePasse">Confirmation mot de passe</label>
+				<p class="errorMsg" id="errorMsg_confMotDePasse" hidden>Le mot de passe diffère</p>
+				<div class="inputs">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+						<path
+							d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+					</svg>
+					<input id="confMotDePasse" type="password" placeholder="Votre mot de passe">
+				</div>
+			</div>
+
+			<div class="fields">
+				<label for="presentation">Présentation en quelques mots</label>
+				<p class="errorMsg" id="errorMsg_presentation" hidden>Saisissez votre présentation <br> entre 10 et 15
+					caractères
+				</p>
+				<div class="inputs">
+					<textarea id="presentation" placeholder="Petite descritpion" rows="4" cols="30"></textarea>
+				</div>
+			</div>
+			<p id="textareaNbChars">0 caractère</p>
+			<input type="submit" value="Inscription">
+		</form>
+	</div>
+	<script type="module" src="./javascript/index.js"></script>
+</body>
+
+</html>

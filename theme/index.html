@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme</title>
+</head>
+
+<body>
+
+    <h1>Themes</h1>
+
+    <label>Switch theme:</label>
+    <button id="toggle"></button>
+
+    <div id="order" class="order" data-order-state="new">
+        A new order.
+    </div>
+
+
+</body>
+
+</html>
+
+<style>
+    html {
+        &[theme='light'] {
+            --background-color: white;
+            --content: "Dark";
+            --color: black;
+        }
+
+        &[theme='dark'] {
+            --background-color: black;
+            --content: "Light";
+            --color: white;
+        }
+    }
+
+    body {
+        background-color: var(--background-color);
+        color: var(--color);
+    }
+
+    #toggle::before {
+        content: var(--content);
+    }
+
+    .order[data-order-state="new"] {
+        color: green;
+    }
+
+    .order[data-order-state="pending"] {
+        color: blue;
+    }
+
+    .order[data-order-state="canceled"] {
+        color: red;
+    }
+</style>
+
+<script>
+    //On peut appeller un id sans le définir (VERY BAD PRACTICE)
+    toggle.addEventListener('click', () => {
+        const html = document.documentElement;
+        html.setAttribute('theme',
+            html.getAttribute('theme') === "light" ? "dark" : "light"
+        )
+    })
+
+    //[data-order-state]
+    console.log(order.dataset.orderState)
+    setTimeout(() => order.dataset.orderState = "pending", 3000)
+    setTimeout(() => order.dataset.orderState = "canceled", 6000) 
+
+</script>
